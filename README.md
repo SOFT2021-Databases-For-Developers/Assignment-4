@@ -1,6 +1,6 @@
 # Assignment-4
 
-##Setup
+##Setup  
 run 'docker compose up'  
 goto 'http://localhost:7474/browser/'  
 copy past script and script2 into the browser  
