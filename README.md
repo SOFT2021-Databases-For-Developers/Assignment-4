@@ -1,9 +1,9 @@
 # Assignment-4
 
-Thomas Ebsen 
-Henning W
-Jonas Hein
-Jonatan Bakke
+Thomas Ebsen n/
+Henning W n/
+Jonas Hein n/
+Jonatan Bakke n/
 
 ##Setup  
 run 'docker compose up'  
