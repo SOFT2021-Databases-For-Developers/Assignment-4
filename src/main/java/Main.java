@@ -11,6 +11,8 @@ public class Main {
         q.getAllCssFilesUsedByMvcController("ProductController");
         //Provides statistical information
         q.countAllAny("CheckIn");
+        q.garbage();
+        q.trash();
         q.close();
 
     }

@@ -122,6 +122,44 @@ public class Neo4jQuerys {
         }
     }
 
+
+    public void trash()
+    {
+        try (Session session = driver.session(SessionConfig.forDatabase("neo4j"))) {
+
+            String cypherQuery =
+                    "match (c:Role) return count(c);";
+
+            var result = session.readTransaction(
+                    tx -> tx.run(cypherQuery)
+                            .single());
+
+            System.out.println(result.get(0));
+        }
+    }
+
+
+
+    public void garbage()
+    {
+        try (Session session = driver.session(SessionConfig.forDatabase("neo4j"))) {
+
+            String cypherQuery =
+                    "MATCH (person {name: 'Developer'})<-[:WORKS_AS]-(p)\n" +
+                            "    RETURN p;";
+
+            var result = session.readTransaction(
+                    tx -> tx.run(cypherQuery)
+                            .list());
+
+            for (Record record : result) {
+                System.out.println(record.get(0).get("name").asString());
+            }
+        }
+    }
+
+
+
     public void close()
     {
         driver.close();
